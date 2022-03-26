@@ -1,0 +1,42 @@
+<h2>{{openTasks.length}} Open Tasks</h2>
+<table *ngIf="openTasks.length" class="w-50 table table-striped table-sm table-bordered">
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Task</th>
+        <th scope="col"></th>
+    </tr>
+    <tr *ngFor="let task of openTasks; let i = index">
+        <td>{{i+1}}.</td>
+        <td>{{task}}</td>
+        <td>
+            <button class="btn btn-outline-primary" (click)="closeTask(i)">
+                Mark done
+            </button>
+        </td>
+    </tr>
+</table>
+
+<p *ngIf="!openTasks.length">No Open Tasks</p>
+
+<button (click)="addPractice()">Add More Practice</button>
+
+
+<h2>{{closedTasks.length}} Closed Tasks</h2>
+<table *ngIf="closedTasks.length" class="w-50 table table-striped table-sm table-bordered">
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Task</th>
+        <th scope="col"></th>
+
+    </tr>
+    <tr *ngFor="let task of closedTasks; let i = index">
+        <td>{{i+1}}.</td>
+        <td>{{task}}</td>
+        <td>
+            <button class="btn btn-outline-secondary" (click)="reopenTask(i)">
+                Mark As Open
+            </button>
+        </td>
+    </tr>
+</table>
+<p *ngIf="!closedTasks.length">No Closed Tasks</p>

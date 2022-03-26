@@ -1,0 +1,6 @@
+<h2>List of Albums</h2>
+<div class="container-fluid">
+    <div class="card-group">
+        <app-album-card *ngFor="let album of albumsArray" [album]="album"></app-album-card>
+    </div>
+</div>
